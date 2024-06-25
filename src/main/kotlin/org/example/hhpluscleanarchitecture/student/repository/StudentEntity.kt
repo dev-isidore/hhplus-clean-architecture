@@ -8,7 +8,7 @@ import jakarta.persistence.Id
 import org.example.hhpluscleanarchitecture.student.domain.Student
 
 @Entity(name = "student")
-data class StudentEntity(
+class StudentEntity(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long,
     @Column(nullable = false) var name: String,
 ) {
