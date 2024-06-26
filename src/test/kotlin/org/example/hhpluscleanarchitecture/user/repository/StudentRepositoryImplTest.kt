@@ -2,11 +2,10 @@ package org.example.hhpluscleanarchitecture.user.repository
 
 import org.assertj.core.api.Assertions.assertThat
 import org.example.hhpluscleanarchitecture.student.domain.Student
-import org.example.hhpluscleanarchitecture.student.repository.StudentEntity
 import org.example.hhpluscleanarchitecture.student.repository.StudentJpaRepository
 import org.example.hhpluscleanarchitecture.student.repository.StudentRepositoryImpl
+import org.example.hhpluscleanarchitecture.student.repository.entity.StudentEntity
 import org.junit.jupiter.api.Test
-
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.ArgumentMatchers.eq
 import org.mockito.InjectMocks

@@ -1,4 +1,4 @@
-package org.example.hhpluscleanarchitecture.student.repository
+package org.example.hhpluscleanarchitecture.student.repository.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -9,16 +9,19 @@ import org.example.hhpluscleanarchitecture.student.domain.Student
 
 @Entity(name = "student")
 class StudentEntity(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long,
-    @Column(nullable = false) var name: String,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long?,
+
+    @Column(nullable = false)
+    val name: String,
 ) {
     companion object {
-        fun fromUser(student: Student): StudentEntity {
+        fun fromStudent(student: Student): StudentEntity {
             return StudentEntity(student.id, student.name)
         }
     }
 
-    fun toDomainModel(): Student {
-        return Student(id, name)
+    fun toDomain(): Student {
+        return Student(id!!, name)
     }
 }
